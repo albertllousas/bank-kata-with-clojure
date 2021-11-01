@@ -17,11 +17,11 @@
 (defn- add [transaction account]
   (assoc account :transactions (concat (:transactions account) (list transaction))))
 
-(defn- move-money [amount local-date type account]
+(defn- move-money [amount local-date type-of-movement account]
   (cond
     (< amount 0) (throw invalid-amount-exception)
     (not (valid-next-date? local-date (:transactions account))) (throw non-valid-transaction-date-exception)
-    :else (add {:amount amount :local-date local-date :type type} account)))
+    :else (add {:amount amount :local-date local-date :type type-of-movement} account)))
 
 (defn on
   ([local-date-as-string] (LocalDate/parse local-date-as-string (DateTimeFormatter/ofPattern "dd-MM-yyyy")))
