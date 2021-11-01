@@ -1,6 +1,6 @@
 # bank-kata-with-clojure
 
-[Bank kata](https://github.com/sandromancuso/Bank-kata) in haskell.
+[Bank kata](https://github.com/sandromancuso/Bank-kata) in Clojure.
 
 ## The problem to solve
 ```
